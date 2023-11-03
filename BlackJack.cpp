@@ -43,6 +43,7 @@
 #include"CardHolder.h"
 #include"Player.h"
 #include"Dealer.h"
+#include"Participant.h"
 using namespace std;
 int main()
 {
@@ -80,7 +81,7 @@ int main()
 			}
 		}
 		count++;
-		match=player.Move();
+		match = player.Move();
 		
 	} while (match==false);
 

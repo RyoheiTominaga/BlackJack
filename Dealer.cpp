@@ -1,4 +1,5 @@
 #include"Dealer.h"
+#include"Participant.h"
 #include<iostream>
 using namespace std;
 
@@ -13,17 +14,17 @@ bool Dealer::Move()
 	}
 	return _move;
 }
-int Dealer::CardSumSetter(int sum) {
-	_card = sum;
-	if (_card > 10) {
-		_card = 10;
-	}
-	if (_card == 1) {
-		if (_cardSum < 11) {
-			_card = 11;
-		}
-	}
-	_cardSum += _card;
-
-	return  _cardSum;
-}
+//int Dealer::CardSumSetter(int sum) {
+//	_card = sum;
+//	if (_card > 10) {
+//		_card = 10;
+//	}
+//	if (_card == 1) {
+//		if (_cardSum < 11) {
+//			_card = 11;
+//		}
+//	}
+//	_cardSum += _card;
+//
+//	return  _cardSum;
+//}

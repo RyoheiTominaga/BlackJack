@@ -130,11 +130,13 @@
     <ClCompile Include="BlackJack.cpp" />
     <ClCompile Include="CardHolder.cpp" />
     <ClCompile Include="Dealer.cpp" />
+    <ClCompile Include="Participant.cpp" />
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CardHolder.h" />
     <ClInclude Include="Dealer.h" />
+    <ClInclude Include="Participant.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

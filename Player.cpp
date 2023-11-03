@@ -21,17 +21,17 @@ bool Player::Move()
 	
 	return match;
 }
-int Player::CardSumSetter(int sum) {
-	_card = sum;
-	if (_card > 10) {
-		_card = 10;
-	}
-	if (_card == 1) {
-		if (_cardSum < 11) {
-			_card = 11;
-		}
-	}
-	_cardSum += _card;
-	
-	return  _cardSum;
-}
+//int Player::CardSumSetter(int sum) {
+//	_card = sum;
+//	if (_card > 10) {
+//		_card = 10;
+//	}
+//	if (_card == 1) {
+//		if (_cardSum < 11) {
+//			_card = 11;
+//		}
+//	}
+//	_cardSum += _card;
+//	
+//	return  _cardSum;
+//}
