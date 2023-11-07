@@ -41,6 +41,7 @@ void CardHolder::distribute()//配るカード
 {
 	int cardNumber = -1;
 	if (_rand==2) {
+		cout << "よびだし" << endl;
 		srand((unsigned int)time(NULL));
 		_rand = 0;
 	}
@@ -48,6 +49,7 @@ void CardHolder::distribute()//配るカード
 			cardNumber = rand() % 52;
 		} while (_card[cardNumber] == 0);
 
+		//printf("カードナンバー%d", cardNumber);
 		_card[cardNumber] = 0;
 		_cardNum = cardNumber+1;
 		_rand++;

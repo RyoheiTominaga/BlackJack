@@ -55,26 +55,38 @@ int main()
 	Player player;
 	Dealer dealer;
 	bool match = false;
+	bool trun = false;//false:プレイヤー,true:ディーラー
 	do{
 		if (count == 0) {
 			card.distribute();
 			card.ShowCard();
 			pNum = card.num();
-			pSum = player.CardSumSetter(pNum);
+			pSum = player.CardSumSetter(pNum,trun);
 			cout << "Player:" << pSum<<"\n\n";
 			card.distribute();
 			card.ShowCard();
+			pNum = card.num();
+			pSum = player.CardSumSetter(pNum, trun);
+			cout << "Player:" << pSum << "\n\n";
+			trun = true;
+			card.distribute();
+			card.ShowCard();
 			dNum = card.num();
-			dSum = dealer.CardSumSetter(dNum);
+			dSum = dealer.CardSumSetter(dNum, trun);
 			cout << "Dealer:" << dSum<<"\n\n";
+			card.distribute();
+			dNum = card.num();
+			dSum = dealer.CardSumSetter(dNum, trun);
 		}
 		else {
+			trun = false;
 			card.distribute();
 			card.ShowCard();
 			pNum = card.num();
-			pSum = player.CardSumSetter(pNum);
+			pSum = player.CardSumSetter(pNum, trun);
 			cout << "Player:" << pSum << "\n\n";
 			if (pSum > 21) {
+				trun = true;
 				cout << "\nPlayer: バースト..." << endl;
 				count = 0;
 				break;
@@ -89,7 +101,7 @@ int main()
 		card.distribute();
 		card.ShowCard();
 		dNum = card.num();
-		dSum = dealer.CardSumSetter(dNum);
+		dSum = dealer.CardSumSetter(dNum, trun);
 		cout << "Dealer:" << dSum << "\n\n";
 		if (dSum > 21) {
 			if (count > 0) {
