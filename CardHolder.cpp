@@ -9,7 +9,7 @@ CardHolder::CardHolder(int maxCards) {
 		
 	}
 	_cardNum = 0;
-	_rand = 2;
+	_cardNumber = 0;
 }
 int CardHolder::kind()//絵柄を返す
 {
@@ -39,38 +39,40 @@ int CardHolder::num() //数字を返す
 }
 void CardHolder::distribute()//配るカード
 {
-	int cardNumber = -1;
-	if (_rand==2) {
-		cout << "よびだし" << endl;
-		srand((unsigned int)time(NULL));
-		_rand = 0;
-	}
-		do {
-			cardNumber = rand() % 52;
-		} while (_card[cardNumber] == 0);
-
-		//printf("カードナンバー%d", cardNumber);
-		_card[cardNumber] = 0;
-		_cardNum = cardNumber+1;
-		_rand++;
+	
+	  _cardNum = _card[_cardNumber];
+		printf("\nカードナンバー%d", _cardNum);
+	
+	  _cardNumber++;
+		
 }
-void CardHolder::ShowCard() {
-	int tenUpNum = 0;
-	int count = -1;
-	if (num() > 10) {
-		tenUpNum= num() - 11;
-		count++;
-	}
-	if (num() == 1) {
-		tenUpNum = 3;
-		count++;
-	}
-	const char* kinds[] = { "スペード:","ハート:","クローバー:","ダイヤ:" };
-	const char* tenUpNumber[] = { "J","Q","K" ,"A"};
-	if (count < 0) {
-		printf("出たカード:%s%d\n", kinds[kind()], num());
-	}
-	else {
-		printf("出たカード:%s%s\n", kinds[kind()], tenUpNumber[tenUpNum]);
+//void CardHolder::ShowCard() {
+//	int tenUpNum = 0;
+//	int count = -1;
+//	if (num() > 10) {
+//		tenUpNum= num() - 11;
+//		count++;
+//	}
+//	if (num() == 1) {
+//		tenUpNum = 3;
+//		count++;
+//	}
+//	const char* kinds[] = { "スペード:","ハート:","クローバー:","ダイヤ:" };
+//	const char* tenUpNumber[] = { "J","Q","K" ,"A"};
+//	if (count < 0) {
+//		printf("出たカード:%s%d\n", kinds[kind()], num());
+//	}
+//	else {
+//		printf("出たカード:%s%s\n", kinds[kind()], tenUpNumber[tenUpNum]);
+//	}
+//}
+void CardHolder::Shuffle(int cards) {
+	int randam = 0;
+	int count = 0;
+	int counts = 0;
+	srand((unsigned int)time(NULL));
+	for (int i = 0;i < cards;++i) {
+		randam = rand() % (cards - i);
+		swap(_card[randam], _card[cards - (i + 1)]);
 	}
 }

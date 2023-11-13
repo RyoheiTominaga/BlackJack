@@ -1,4 +1,5 @@
 #include"Player.h"
+#include"CardHolder.h"
 #include<iostream>
 using namespace std;
 class CardHolder;
@@ -21,6 +22,27 @@ bool Player::Move()
 	
 	return match;
 }
+//void Player::ShowCard(CardHolder* cardholder) {
+//	
+//	int tenUpNum = 0;
+//	int count = -1;
+//	if (cardholder->num() > 10) {
+//		tenUpNum = cardholder->num() - 11;
+//		count++;
+//	}
+//	if (cardholder->num() == 1) {
+//		tenUpNum = 3;
+//		count++;
+//	}
+//	const char* kinds[] = { "スペード:","ハート:","クローバー:","ダイヤ:" };
+//	const char* tenUpNumber[] = { "J","Q","K" ,"A" };
+//	if (count < 0) {
+//		printf("出たカード:%s%d\n", kinds[cardholder->kind()], cardholder->num());
+//	}
+//	else {
+//		printf("出たカード:%s%s\n", kinds[cardholder->kind()], tenUpNumber[tenUpNum]);
+//	}
+//}
 //int Player::CardSumSetter(int sum) {
 //	_card = sum;
 //	if (_card > 10) {

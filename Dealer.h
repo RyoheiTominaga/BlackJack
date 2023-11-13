@@ -1,5 +1,7 @@
 #pragma once
 #include"Participant.h"
+#include"CardHolder.h"
+//class CardHolder;
 class Dealer:public Participant
 {
 public:

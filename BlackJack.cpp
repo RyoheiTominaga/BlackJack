@@ -43,45 +43,70 @@
 #include"CardHolder.h"
 #include"Player.h"
 #include"Dealer.h"
-#include"Participant.h"
+//#include"Participant.h"
 using namespace std;
+
 int main()
 {
-	int maxCard = 54;
-	int count = 0;
-	CardHolder card(maxCard);
-	int pNum = NULL, dNum = NULL;
-	int pSum = NULL, dSum = NULL;
+	/*int a[10] = { 0,8,5,3,7,2,6,4,1,9 };
+	int minNum = 0;
+	for (int i = 0;i < 9;++i) {
+		minNum = i;
+		cout << "確認用：" << i << endl;
+		for (int j = i+1;j < 10;++j) {
+			if (a[minNum]> a[j]) {
+				minNum = j;
+			}
+			
+		}
+		swap(a[i], a[minNum]);
+		
+		cout << a[i] << "," << endl;
+	}*/
+
 	Player player;
 	Dealer dealer;
-	bool match = false;
+	int pNum = 0, dNum = 0;
+	int pSum = 0, dSum = 0;
+	CardHolder card(maxCard);
 	bool trun = false;//false:プレイヤー,true:ディーラー
+
+	int maxCard = 52;
+	int count = 0;
+	
+	
+	
+	bool match = false;
+	//srand((unsigned int)time(NULL));
+	card.Shuffle(maxCard);
+	
 	do{
 		if (count == 0) {
 			card.distribute();
-			card.ShowCard();
+			dealer.ShowCard(&card);
 			pNum = card.num();
-			pSum = player.CardSumSetter(pNum,trun);
-			cout << "Player:" << pSum<<"\n\n";
+			pSum = player.CardSumSetter(pNum, trun);
+			cout << "Player:" << pSum << "\n\n";
 			card.distribute();
-			card.ShowCard();
+			player.ShowCard(&card);
 			pNum = card.num();
 			pSum = player.CardSumSetter(pNum, trun);
 			cout << "Player:" << pSum << "\n\n";
 			trun = true;
 			card.distribute();
-			card.ShowCard();
+			player.ShowCard(&card);
 			dNum = card.num();
 			dSum = dealer.CardSumSetter(dNum, trun);
 			cout << "Dealer:" << dSum<<"\n\n";
 			card.distribute();
 			dNum = card.num();
+			dealer.ShowCard(&card);
 			dSum = dealer.CardSumSetter(dNum, trun);
 		}
 		else {
 			trun = false;
 			card.distribute();
-			card.ShowCard();
+			player.ShowCard(&card);
 			pNum = card.num();
 			pSum = player.CardSumSetter(pNum, trun);
 			cout << "Player:" << pSum << "\n\n";
@@ -99,7 +124,7 @@ int main()
 
 	do {
 		card.distribute();
-		card.ShowCard();
+		dealer.ShowCard(&card);
 		dNum = card.num();
 		dSum = dealer.CardSumSetter(dNum, trun);
 		cout << "Dealer:" << dSum << "\n\n";
@@ -130,6 +155,13 @@ int main()
 		cout << "player::" << pSum << "\nDealer::" << dSum << endl;
 	}
 }
+//void PlayerTurn() {
+//	card.distribute();
+//	card.ShowCard();
+//	pNum = card.num();
+//	pSum = player.CardSumSetter(pNum, trun);
+//	cout << "Player:" << pSum << "\n\n";
+//}
 	
 //////ここは気にしないでくださいアルゴリズムの授業の時に少し使っただけです。。
 	/*int a[10] = { 4,5,6,48,12,54,8,76,3,0 };
