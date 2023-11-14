@@ -48,21 +48,7 @@ using namespace std;
 
 int main()
 {
-	/*int a[10] = { 0,8,5,3,7,2,6,4,1,9 };
-	int minNum = 0;
-	for (int i = 0;i < 9;++i) {
-		minNum = i;
-		cout << "確認用：" << i << endl;
-		for (int j = i+1;j < 10;++j) {
-			if (a[minNum]> a[j]) {
-				minNum = j;
-			}
-			
-		}
-		swap(a[i], a[minNum]);
-		
-		cout << a[i] << "," << endl;
-	}*/
+	
 
 	Player player;
 	Dealer dealer;
@@ -180,7 +166,21 @@ int main()
 		cout<<"\n" << a[i] <<"\n";
 	}*/
 	
-	
+	/*int a[10] = { 0,8,5,3,7,2,6,4,1,9 };
+	int minNum = 0;
+	for (int i = 0;i < 9;++i) {
+		minNum = i;
+		cout << "確認用：" << i << endl;
+		for (int j = i+1;j < 10;++j) {
+			if (a[minNum]> a[j]) {
+				minNum = j;
+			}
+
+		}
+		swap(a[i], a[minNum]);
+
+		cout << a[i] << "," << endl;
+	}*/
 
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
