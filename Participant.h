@@ -5,7 +5,7 @@ class CardHolder;
 class Participant {
 public:
 	int CardSumSetter(int sum,bool trun);//カードの合計を返す
-	void ShowCard(CardHolder* cardHolder);
+	void ShowCard(CardHolder& cardHolder);
 protected:
 	int _cardSum = 0;//出た目の合計
 	int _card = 0;//出た目

@@ -38,23 +38,23 @@ int Participant::CardSumSetter(int sum, bool turn) {
 
 	return  _cardSum;
 }
-void Participant::ShowCard(CardHolder* cardholder){
+void Participant::ShowCard(CardHolder& cardholder){
 	int tenUpNum = 0;
 	int count = -1;
-	if (cardholder->num() > 10) {
-		tenUpNum = cardholder->num() - 11;
+	if (cardholder.num() > 10) {
+		tenUpNum = cardholder.num() - 11;
 		count++;
 	}
-	if (cardholder->num() == 1) {
+	if (cardholder.num() == 1) {
 		tenUpNum = 3;
 		count++;
 	}
 	const char* kinds[] = { "スペード:","ハート:","クローバー:","ダイヤ:" };
 	const char* tenUpNumber[] = { "J","Q","K" ,"A" };
 	if (count < 0) {
-		printf("出たカード:%s%d\n", kinds[cardholder->kind()], cardholder->num());
+		printf("出たカード:%s%d\n", kinds[cardholder.kind()], cardholder.num());
 	}
 	else {
-		printf("出たカード:%s%s\n", kinds[cardholder->kind()], tenUpNumber[tenUpNum]);
+		printf("出たカード:%s%s\n", kinds[cardholder.kind()], tenUpNumber[tenUpNum]);
 	}
 }

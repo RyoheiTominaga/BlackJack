@@ -49,15 +49,13 @@ using namespace std;
 int main()
 {
 	
-
+	int maxCard = 52;
 	Player player;
 	Dealer dealer;
 	int pNum = 0, dNum = 0;
 	int pSum = 0, dSum = 0;
 	CardHolder card(maxCard);
 	bool trun = false;//false:プレイヤー,true:ディーラー
-
-	int maxCard = 52;
 	int count = 0;
 	
 	
@@ -69,30 +67,30 @@ int main()
 	do{
 		if (count == 0) {
 			card.distribute();
-			dealer.ShowCard(&card);
+			dealer.ShowCard(card);
 			pNum = card.num();
 			pSum = player.CardSumSetter(pNum, trun);
 			cout << "Player:" << pSum << "\n\n";
 			card.distribute();
-			player.ShowCard(&card);
+			player.ShowCard(card);
 			pNum = card.num();
 			pSum = player.CardSumSetter(pNum, trun);
 			cout << "Player:" << pSum << "\n\n";
 			trun = true;
 			card.distribute();
-			player.ShowCard(&card);
+			player.ShowCard(card);
 			dNum = card.num();
 			dSum = dealer.CardSumSetter(dNum, trun);
 			cout << "Dealer:" << dSum<<"\n\n";
 			card.distribute();
 			dNum = card.num();
-			dealer.ShowCard(&card);
+			dealer.ShowCard(card);
 			dSum = dealer.CardSumSetter(dNum, trun);
 		}
 		else {
 			trun = false;
 			card.distribute();
-			player.ShowCard(&card);
+			player.ShowCard(card);
 			pNum = card.num();
 			pSum = player.CardSumSetter(pNum, trun);
 			cout << "Player:" << pSum << "\n\n";
@@ -110,7 +108,7 @@ int main()
 
 	do {
 		card.distribute();
-		dealer.ShowCard(&card);
+		dealer.ShowCard(card);
 		dNum = card.num();
 		dSum = dealer.CardSumSetter(dNum, trun);
 		cout << "Dealer:" << dSum << "\n\n";

@@ -6,7 +6,6 @@ using namespace std;
 CardHolder::CardHolder(int maxCards) {
 	for (int i = 0;i < maxCards;++i) {
 		_card[i] = i+1;
-		
 	}
 	_cardNum = 0;
 	_cardNumber = 0;
@@ -18,7 +17,7 @@ int CardHolder::kind()//絵柄を返す
 	//メモ
 	//const char* kinds[] = { "スペード:","ハート:","クローバー:","ダイヤ:" };
 
-	kind=_cardNum/card;
+	kind=(_cardNum-1)/card;
 	
 	return kind;
 }
@@ -39,12 +38,9 @@ int CardHolder::num() //数字を返す
 }
 void CardHolder::distribute()//配るカード
 {
-	
 	  _cardNum = _card[_cardNumber];
 		printf("\nカードナンバー%d", _cardNum);
-	
 	  _cardNumber++;
-		
 }
 //void CardHolder::ShowCard() {
 //	int tenUpNum = 0;
